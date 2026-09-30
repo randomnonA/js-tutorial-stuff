@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Untitled</title>
+</head>
+
+<body>
+    <div id="output"> </div>
+        <p id="para">
+            some text here
+        </p>
+
+        <button>
+            Red
+        </button>
+
+        <button>
+            Blue
+        </button>
+    
+
+    <script>
+        function changeColor(newColor) {
+            const elem = document.getElementById("para")
+            elem.style.color = newColor;
+        }
+
+        document.querySelectorAll("button").forEach((button) => {
+            button.addEventListener("click", (event) => {
+                changeColor(event.target.textContent.toLowerCase());
+            });
+        });
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        let result = add(13, 35);
+
+        function log(message) {
+            console.log(message);
+
+            document.getElementById("output").innerHTML +=
+                "<p>" + message + "</p>";
+
+            document.getElementById("output").innerHTML +=
+                "<p>" + result + "</p>";
+        }
+
+        log("Hello World");
+    </script>
+</body>
+</html>
