@@ -17,9 +17,18 @@
         <button>
             Blue
         </button>
-    
+    <p id="time">
+      
+  </p>
 
+  <p id="while">
+    
+  </p>
     <script>
+      let hour;
+      const time = 9;//newDate().getHours();
+      let greeting;
+      
         function changeColor(newColor) {
             const elem = document.getElementById("para")
             elem.style.color = newColor;
@@ -48,6 +57,37 @@
         }
 
         log("Hello World");
+      
+      if (hour < 18) {
+        greeting = "good day";
+      }
+      else {
+        greeting = "good evening!";
+      }
+      
+      let wake = false;
+      
+      if (time <= 9 || wake !== true) {
+        greeting = "morning";
+      }
+      else if (time < 14) {
+        greeting = "good afternoon";
+      }
+      else {
+        greeting = "good day";
+      }
+      
+      // Inner HTML 
+      document.getElementById("time").innerHTML = greeting;
+      
+      let text = "";
+      let i =0;
+      while (i < 10) {
+        text += "The number is " + i + "<br>";
+        i++;
+      }
+      
+      document.getElementById("while").innerHTML = text;
     </script>
 </body>
 </html>
